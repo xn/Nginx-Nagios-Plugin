@@ -195,9 +195,9 @@ get_status() {
     if [ "$secure" = 1 ]
     then
         wget_opts="-O- -q -t 3 -T 3 --no-check-certificate --http-user=${auth_user} --http-password=${auth_password}"
-        out1=`wget ${wget_opts} http://${hostname}:${port}/${status_page}`
+        out1=`wget ${wget_opts} https://${hostname}:${port}/${status_page}`
         sleep 1
-        out2=`wget ${wget_opts} http://${hostname}:${port}/${status_page}`
+        out2=`wget ${wget_opts} https://${hostname}:${port}/${status_page}`
     else        
         wget_opts="-O- -q -t 3 -T 3 --http-user=${auth_user} --http-password=${auth_password}"
         out1=`wget ${wget_opts} http://${hostname}:${port}/${status_page}`
